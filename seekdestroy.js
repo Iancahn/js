@@ -11,10 +11,13 @@
 // Add a filter to remove the requested items.
 function destroyer(arr) {
     let targetArray = arr;
+    console.log(targetArray);
+    console.log(arguments);
     let removeArray = [];
     for (let i = 1; i < arguments.length; i++) {
         removeArray.push(arguments[i])
     }
+    console.log("This is the removeArray text: " + removeArray);
     let finalArray = targetArray.filter(item => !removeArray.includes(item));
     console.log(finalArray);
     return finalArray;

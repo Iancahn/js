@@ -2,11 +2,17 @@
 
 // For example, if the first argument is [{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], and the second argument is { last: "Capulet" }, then you must return the third object from the array (the first argument), because it contains the name and its value, that was passed on as the second argument.
 
+
+// Figured out the logic, but didnt know how write it with key value as search parameters
+
 function whatIsInAName(collection, source) {
     const arr = [];
     // Only change code below this line
+    const sourceKeys = Object.keys(source);
 
-
+    return collection
+        .filter(obj => sourceKeys
+            .every(key => obj.hasOwnProperty(key) && obj[key] === source[key]));
     // Only change code above this line
     return arr;
 }
